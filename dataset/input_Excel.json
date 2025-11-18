@@ -1,0 +1,21 @@
+{
+	"name": "input_Excel",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStoragebulk_excel",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "DATA.xlsx",
+				"fileSystem": "bulkexcel"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

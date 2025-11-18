@@ -1,0 +1,9 @@
+{
+	"name": "kgdatafact",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "bd8cb5ca-9df9-4aad-83bc-438bb66e0a4e",
+		"tenantId": "9b69bee4-788f-4dcb-a514-94fbc222c2c3"
+	}
+}

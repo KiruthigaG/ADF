@@ -1,0 +1,67 @@
+{
+	"name": "PL_SQL_Server",
+	"properties": {
+		"activities": [
+			{
+				"name": "SP_SQLSERVER_MOVE",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[InsertCustomer]",
+					"storedProcedureParameters": {
+						"CustomerID": {
+							"value": {
+								"value": "@pipeline().parameters.CustomerID",
+								"type": "Expression"
+							},
+							"type": "Int32"
+						},
+						"FirstName": {
+							"value": {
+								"value": "@pipeline().parameters.FirstName",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"LastName": {
+							"value": {
+								"value": "@pipeline().parameters.LastName",
+								"type": "Expression"
+							},
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "SqlServer1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"CustomerID": {
+				"type": "string",
+				"defaultValue": "102"
+			},
+			"FirstName": {
+				"type": "string",
+				"defaultValue": "arun"
+			},
+			"LastName": {
+				"type": "string",
+				"defaultValue": "prashanth"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-11-18T13:48:30Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
